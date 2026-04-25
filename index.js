@@ -187,4 +187,17 @@ bot.on('message', async (msg) => {
 // ─── Error handling ───────────────────────────────────────────────────────────
 bot.on('polling_error', (err) => console.error('Polling error:', err.message));
 
+const ADMIN_ID = YOUR_TELEGRAM_USER_ID; // replace this
+
+bot.onText(/\/admin/, async (msg) => {
+  if (msg.chat.id !== ADMIN_ID) return; // only you can use this
+  
+  await send(msg.chat.id,
+    `📊 *Live Stats*\n\n` +
+    `👥 Waiting: *${waitingQueue.length}* people\n` +
+    `🔗 Active pairs: *${activePairs.size / 2}*\n` +
+    `👤 Total users seen: *${userStats.size}*`
+  );
+});
+
 console.log('🤖 Anonymous College Chat Bot is running...');
