@@ -200,4 +200,7 @@ bot.onText(/\/admin/, async (msg) => {
   );
 });
 
+const http = require('http');
+http.createServer((req, res) => res.end('Bot is running!')).listen(process.env.PORT || 3000);
+
 console.log('🤖 Anonymous College Chat Bot is running...');
