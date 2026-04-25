@@ -187,7 +187,7 @@ bot.on('message', async (msg) => {
 // ─── Error handling ───────────────────────────────────────────────────────────
 bot.on('polling_error', (err) => console.error('Polling error:', err.message));
 
-const ADMIN_ID = YOUR_TELEGRAM_USER_ID; // replace this
+const ADMIN_ID = 8715025357:AAHf-rl0IQU1cdopa9cmVbo_ELgihATDwBw; // replace this
 
 bot.onText(/\/admin/, async (msg) => {
   if (msg.chat.id !== ADMIN_ID) return; // only you can use this
